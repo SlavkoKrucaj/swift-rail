@@ -1,0 +1,8 @@
+Metrics/LineLength:
+  Max: 170
+Style/Documentation:
+  Enabled: false
+Style/ExpandPathArguments:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false

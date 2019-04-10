@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require 'swiftrail/cli'
+require 'swiftrail/testrail/coverage'
+require 'swiftrail/testrail/lint'
+
+begin
+  Swiftrail::Cli.start
+rescue Swiftrail::Errors::Base => e
+  warn e
+  exit(false)
+end

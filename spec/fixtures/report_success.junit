@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='Whatever.MyTests.xctest' tests='6' failures='0'>
+  <testsuite name='Whatever.MyTests' tests='3' failures=''>
+    <testcase classname='Whatever.MyTests' name='test_first' time='0.276'/>
+    <testcase classname='Whatever.MyTests' name='test_second' time='0.011'/>
+    <testcase classname='Whatever.MyTests' name='test_third' time='0.009'/>
+  </testsuite>
+  <testsuite name='Whatever.MyOtherTests' tests='3' failures='0'>
+    <testcase classname='Whatever.MyOtherTests' name='test_four' time='0.180'/>
+    <testcase classname='Whatever.MyOtherTests' name='test_five' time='0.180'/>
+    <testcase classname='Whatever.MyOtherTests' name='test_six' time='0.180'/>
+  </testsuite>
+</testsuites>

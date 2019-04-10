@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='Whatever.MyTests.xctest' tests='4' failures='0'>
+  <testsuite name='Whatever.MyTests' tests='2' failures='1'>
+    <testcase classname='Whatever.MyTests' name='test_first' time='0.276'>
+      <failure>There was some failure
+line: 26
+error: XCTAssertEqual failed: true is not equal to false - </failure>
+    </testcase>
+    <testcase classname='Whatever.MyTests' name='test_second' time='0.011'/>
+    <testcase classname='Whatever.MyTests' name='test_third' time='0.009'/>
+  </testsuite>
+  <testsuite name='Whatever.SomeOtherTests' tests='1' failures='0'>
+    <testcase classname='Whatever.SomeOtherTests' name='test_whatever' time='0.180'/>
+  </testsuite>
+</testsuites>

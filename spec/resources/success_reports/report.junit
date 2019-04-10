@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='N26Socure-Unit-SnapshotTests.xctest' tests='39' failures='0'>
+  <testsuite name='N26Feed_Unit_SnapshotTests.BalanceModuleSnapshotTests' tests='3' failures='0'>
+    <testcase classname='N26Feed_Unit_SnapshotTests.BalanceModuleSnapshotTests' name='test_balanceModule_long' time='0.276'/>
+    <testcase classname='N26Feed_Unit_SnapshotTests.BalanceModuleSnapshotTests' name='test_balanceModule_short' time='0.011'/>
+    <testcase classname='N26Feed_Unit_SnapshotTests.BalanceModuleSnapshotTests' name='test_balanceModule_standard' time='0.009'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_SnapshotTests.FeedErrorViewSnapshotTests' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_SnapshotTests.FeedErrorViewSnapshotTests' name='test_feedErrorView' time='0.180'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_SnapshotTests.FeedSkeletonViewSnapshotTest' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_SnapshotTests.FeedSkeletonViewSnapshotTest' name='test_feedSkeletonView' time='0.117'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_SnapshotTests.PendingTransactionSnapshotTests' tests='3' failures='0'>
+    <testcase classname='N26Feed_Unit_SnapshotTests.PendingTransactionSnapshotTests' name='test_recurringTransactionItem_max' time='0.024'/>
+    <testcase classname='N26Feed_Unit_SnapshotTests.PendingTransactionSnapshotTests' name='test_recurringTransactionItem_standard' time='0.010'/>
+    <testcase classname='N26Feed_Unit_SnapshotTests.PendingTransactionSnapshotTests' name='test_recurringTransactionItem_tooLong' time='0.010'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_SnapshotTests.RecurringTransactionSnapshotTests' tests='3' failures='0'>
+    <testcase classname='N26Feed_Unit_SnapshotTests.RecurringTransactionSnapshotTests' name='test_recurringTransactionItem_max' time='0.013'/>
+    <testcase classname='N26Feed_Unit_SnapshotTests.RecurringTransactionSnapshotTests' name='test_recurringTransactionItem_standard' time='0.012'/>
+    <testcase classname='N26Feed_Unit_SnapshotTests.RecurringTransactionSnapshotTests' name='test_recurringTransactionItem_tooLong' time='0.009'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_SnapshotTests.RegressionSnapshotTests' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_SnapshotTests.RegressionSnapshotTests' name='test_openFeedScreen' time='0.257'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_UnitTests.BalanceTests' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_UnitTests.BalanceTests' name='test_parseValidBalance' time='0.037'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_UnitTests.BalanceViewModelTests' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_UnitTests.BalanceViewModelTests' name='test_viewModel' time='0.004'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_UnitTests.FeedControllerTests' tests='2' failures='0'>
+    <testcase classname='N26Feed_Unit_UnitTests.FeedControllerTests' name='test_loadFeed_showViews' time='0.007'/>
+    <testcase classname='N26Feed_Unit_UnitTests.FeedControllerTests' name='test_reloadTransactionList' time='0.001'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_UnitTests.FeedErrorControllerTests' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_UnitTests.FeedErrorControllerTests' name='test_reloadTransactionList' time='0.004'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_UnitTests.FeedErrorTests' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_UnitTests.FeedErrorTests' name='test_parseValidFeedError' time='0.001'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_UnitTests.FeedErrorViewModelTests' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_UnitTests.FeedErrorViewModelTests' name='test_viewModel' time='0.001'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_UnitTests.FeedViewControllerTests' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_UnitTests.FeedViewControllerTests' name='test_view_canBeInitialized' time='0.022'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_UnitTests.PendingTransactionControllerTests' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_UnitTests.PendingTransactionControllerTests' name='test_items' time='0.001'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_UnitTests.PendingTransactionTests' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_UnitTests.PendingTransactionTests' name='test_parseValidRecurring' time='0.007'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_UnitTests.RecurringTransactionTests' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_UnitTests.RecurringTransactionTests' name='test_parseValidRecurring' time='0.006'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_UnitTests.RecurringTransactionsControllerTests' tests='2' failures='0'>
+    <testcase classname='N26Feed_Unit_UnitTests.RecurringTransactionsControllerTests' name='test_didSelect_standingOrder' time='0.002'/>
+    <testcase classname='N26Feed_Unit_UnitTests.RecurringTransactionsControllerTests' name='test_items' time='0.002'/>
+  </testsuite>
+  <testsuite name='N26Feed_Unit_UnitTests.RecurringTransactionsViewModelTests' tests='1' failures='0'>
+    <testcase classname='N26Feed_Unit_UnitTests.RecurringTransactionsViewModelTests' name='test_viewModel' time='0.002'/>
+  </testsuite>
+  <testsuite name='N26Pigment_iOS_Unit_Tests.N26ConfigTests' tests='8' failures='0'>
+    <testcase classname='N26Pigment_iOS_Unit_Tests.N26ConfigTests' name='testDevConfiguration' time='0.022'/>
+    <testcase classname='N26Pigment_iOS_Unit_Tests.N26ConfigTests' name='testLiveConfiguration' time='0.001'/>
+    <testcase classname='N26Pigment_iOS_Unit_Tests.N26ConfigTests' name='testRawDevConfiguration' time='0.002'/>
+    <testcase classname='N26Pigment_iOS_Unit_Tests.N26ConfigTests' name='testRawLiveConfiguration' time='0.001'/>
+    <testcase classname='N26Pigment_iOS_Unit_Tests.N26ConfigTests' name='testRawStagingConfiguration' time='0.001'/>
+    <testcase classname='N26Pigment_iOS_Unit_Tests.N26ConfigTests' name='testRawTFCanaryConfiguration' time='0.001'/>
+    <testcase classname='N26Pigment_iOS_Unit_Tests.N26ConfigTests' name='testStagingConfiguration' time='0.001'/>
+    <testcase classname='N26Pigment_iOS_Unit_Tests.N26ConfigTests' name='testTFCanaryConfiguration' time='0.001'/>
+  </testsuite>
+  <testsuite name='N26Socure_Unit_SnapshotTests.SocureVerificationFailureSnapshotTests' tests='2' failures='0'>
+    <testcase classname='N26Socure_Unit_SnapshotTests.SocureVerificationFailureSnapshotTests' name='test_verifyFailure' time='0.338'/>
+    <testcase classname='N26Socure_Unit_SnapshotTests.SocureVerificationFailureSnapshotTests' name='test_verifyRetry' time='0.157'/>
+  </testsuite>
+  <testsuite name='N26Socure_Unit_SnapshotTests.SocureVerificationSuccessSnapshotTests' tests='3' failures='0'>
+    <testcase classname='N26Socure_Unit_SnapshotTests.SocureVerificationSuccessSnapshotTests' name='test_termsAndConditions' time='0.178'/>
+    <testcase classname='N26Socure_Unit_SnapshotTests.SocureVerificationSuccessSnapshotTests' name='test_verifyLoading' time='0.170'/>
+    <testcase classname='N26Socure_Unit_SnapshotTests.SocureVerificationSuccessSnapshotTests' name='test_verifySuccess' time='0.159'/>
+  </testsuite>
+</testsuites>
