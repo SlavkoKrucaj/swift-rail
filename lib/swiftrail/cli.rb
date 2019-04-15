@@ -1,4 +1,5 @@
 require 'thor'
+require 'json'
 require 'swiftrail'
 require 'swiftrail/config/reader'
 
@@ -29,13 +30,26 @@ module Swiftrail
     end
 
     desc 'coverage', 'Reports coverage of all the tests on testrail account'
+    method_option :output_folder, type: :string, desc: 'Ouptut folder for your results'
     def coverage
-      puts(swiftrail_coverage.coverage_report(options[:run_id]))
+      results = swiftrail_coverage.coverage_report(options[:run_id])
+      if options['output_folder'].nil?
+        puts(JSON.pretty_generate(results))
+      else
+        write(results, File.join(options['output_folder'], 'coverage.swiftrail'))
+      end
+
     end
 
     desc 'lint', 'Reports case ids that are missing on testrail account'
+    method_option :output_folder, type: :string, desc: 'Ouptut folder for your results'
     def lint
-      puts(swiftrail_lint.lint_report(options[:run_id]))
+      results = swiftrail_lint.lint_report(options[:run_id])
+      if options['output_folder'].nil?
+        puts(JSON.pretty_generate(results))
+      else
+        write(results, File.join(options['output_folder'], 'lint.swiftrail'))
+      end
     end
 
     private
@@ -66,6 +80,12 @@ module Swiftrail
         options['test_rail_password'],
         options['test_rail_url']
       )
+    end
+
+    def write(hash, file)
+      File.open(file,"w") do |f|
+        f.write(JSON.pretty_generate(hash))
+      end
     end
   end
 end

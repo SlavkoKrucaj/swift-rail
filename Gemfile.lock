@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    swiftrail (0.1.2)
+    swiftrail (0.1.5)
       nokogiri (~> 1.10)
       thor (~> 0.20)
 
