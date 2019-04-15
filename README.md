@@ -20,15 +20,12 @@ $ bundle
 ### Options
 
 Mandatory options for all of the commands are
- 
+
 - `--test_classes=''` - regex for the path to swift tests
 - `--test_rail_username=''` - username for TestRail account
 - `--test_rail_password=''` - password for TestRail account
 - `--test_rail_url=''` -  url for TestRail account
 - `--run_id=''` - run_id for which you want to run the command
-
-When running report you additionaly have to pass location of the test_reports
-    - `--test-reports=''`
 
 ### Marking test cases
 
@@ -67,6 +64,9 @@ class MyOtherTests: XCTestCase {
 ```
 ### Report
 
+When running report you additionaly have to pass location of the test_reports
+- `--test-reports=''`
+
 To be able to report the results of the tests, you need to first generate xml junit reports. Once you have those, running
 ```
 swiftrail report --test-reports='path/to/test/reports' --run_id:123 (all the other options should also be included)
@@ -75,6 +75,10 @@ will report the results to TestRail. Dependent on success/failure the tests on T
 
 ### Coverage
 
+When running coverage you additionaly can pass output folder, where the report will be generated (if not passed it will print out to terminal)
+- `--output_folder=''`
+
+
 Coverage report will give you the percentage of test cases covered by your ui/unit/... tests.
 
 ```
@@ -82,6 +86,9 @@ swiftrail coverage --run_id:123 (all the other options should also be included)
 ```
 
 ### Lint
+
+When running lint you additionaly can pass output folder, where the report will be generated (if not passed it will print out to terminal)
+- `--output_folder=''`
 
 Lint will give you outadet case_ids that you have marked on your ui/unit tests, but no longer exist as test cases on TestRail.
 
