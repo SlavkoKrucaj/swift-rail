@@ -18,6 +18,7 @@ module Swiftrail
       def base_defaults
         {
           reports: '',
+          strict: false,
           test_classes: '',
           test_rail_username: '',
           test_rail_password: '',

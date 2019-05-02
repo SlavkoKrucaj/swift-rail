@@ -21,6 +21,7 @@ module Swiftrail
 
     desc 'report', 'Reports success/failure to test rail, based on the results of your tests'
     method_option :test_reports, type: :string, aliases: '-reports', default: defaults['reports'], desc: 'Regex to match your junit report files.'
+    method_option :strict, type: :boolean, aliases: '-strict', default: defaults['reports'], desc: 'Fail if there you are trying to report missing test case id'
     def report
       if swiftrail_reporter.report_results(options[:run_id])
         puts 'Successfully reported the results'
@@ -60,7 +61,8 @@ module Swiftrail
         [options['test_classes']],
         options['test_rail_username'],
         options['test_rail_password'],
-        options['test_rail_url']
+        options['test_rail_url'],
+        options['strict']
       )
     end
 

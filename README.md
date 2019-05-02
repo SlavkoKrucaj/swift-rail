@@ -64,14 +64,18 @@ class MyOtherTests: XCTestCase {
 ```
 ### Report
 
-When running report you additionaly have to pass location of the test_reports
+When running report you additionaly have to pass location of the test_reports, and if you want strict mode
 - `--test-reports=''`
+- `--strict` (default is `false`)
 
 To be able to report the results of the tests, you need to first generate xml junit reports. Once you have those, running
 ```
 swiftrail report --test-reports='path/to/test/reports' --run_id:123 (all the other options should also be included)
 ```
 will report the results to TestRail. Dependent on success/failure the tests on TestRail will be marked accordingly.
+
+
+If the strict mode is enabled, the upload will fail if you have test cases that are not present in the test run.
 
 ### Coverage
 
