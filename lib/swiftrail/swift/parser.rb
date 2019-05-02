@@ -42,7 +42,7 @@ module Swiftrail
       end
 
       def cases_regex
-        %r{(//\s*TESTRAIL\s*([(C(0-9)*)|\s|,]*)$\s*)*(func |class )\s*(\w*)\s*(\(\)|:\s*XCTestCase)}im
+        %r{(//\s*TESTRAIL\s*([(C(0-9)*)|\s|,]*)$\s*)*^[\w ]*(func |class )\s*(\w*)\s*(\(\)|:\s*XCTestCase)}im
       end
 
       def sanitize(case_ids)

@@ -26,3 +26,18 @@ class MyOtherTests: XCTestCase {
     func test_six() {
     }
 }
+
+//testrail C456740
+final class MyFinalTests: XCTestCase {
+
+    //testrail C3333, C321213
+    private func test_first() {
+    }
+
+    //testrail C321321
+    func test_second() {
+    }
+
+    func test_third() {
+    }
+}
