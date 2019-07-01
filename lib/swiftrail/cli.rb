@@ -22,8 +22,9 @@ module Swiftrail
     desc 'report', 'Reports success/failure to test rail, based on the results of your tests'
     method_option :test_reports, type: :string, aliases: '-reports', default: defaults['reports'], desc: 'Regex to match your junit report files.'
     method_option :strict, type: :boolean, aliases: '-strict', default: defaults['reports'], desc: 'Fail if there you are trying to report missing test case id'
+    method_option :dry_run, type: :boolean, default: defaults['dry_run'], desc: 'During dry run, results will be printed out instead of sent to test rail'
     def report
-      if swiftrail_reporter.report_results(options[:run_id])
+      if swiftrail_reporter.report_results(options[:run_id], options[:dry_run])
         puts 'Successfully reported the results'
       else
         puts 'There was an issue while reporting the results'

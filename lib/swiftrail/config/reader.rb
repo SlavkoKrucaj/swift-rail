@@ -22,7 +22,8 @@ module Swiftrail
           test_classes: '',
           test_rail_username: '',
           test_rail_password: '',
-          test_rail_url: ''
+          test_rail_url: '',
+          dry_run: false,
         }
       end
 

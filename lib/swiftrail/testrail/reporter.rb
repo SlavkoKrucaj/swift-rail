@@ -15,8 +15,13 @@ module Swiftrail
         @strict = strict
       end
 
-      def report_results(run_id)
-        test_rail_client(run_id).publish_results(purge(assembler(swift_test_parser.parse, junit_parser.parse).assemble, run_id))
+      def report_results(run_id, dry_run)
+        unless dry_run
+          test_rail_client(run_id).publish_results(purge(assembler(swift_test_parser.parse, junit_parser.parse).assemble, run_id))
+        else
+          STDOUT::puts("RUN_ID = #{run_id}")
+          STDOUT::puts(purge(assembler(swift_test_parser.parse, junit_parser.parse).assemble, run_id).map(&:to_json))
+        end
       end
 
       private
