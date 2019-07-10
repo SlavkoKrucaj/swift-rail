@@ -42,7 +42,7 @@ module Swiftrail
           test.class_name == junit_test_case.class_name &&
             test.test_name == junit_test_case.test_name
         end
-        raise Error::Ambiguity(junit_test_case, tests) if tests.count > 1
+        raise Error::Ambiguity.new(junit_test_case, tests) if tests.count > 1
 
         tests.first
       end
