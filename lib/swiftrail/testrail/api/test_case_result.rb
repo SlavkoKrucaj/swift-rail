@@ -7,8 +7,7 @@ module Swiftrail
           {
             case_id: case_id,
             status_id: status,
-            comment: comment,
-            elapsed: duration
+            comment: comment
           }
         end
 
