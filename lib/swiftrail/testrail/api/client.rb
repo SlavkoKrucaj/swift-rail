@@ -19,9 +19,9 @@ module Swiftrail
         def publish_results(results)
           response = conn.request(post_request(publish_result_path, results))
 
-          raise Error::InvalidRequest if response.code == '400'
-          raise Error::NoPermission if response.code == '403'
-          raise Error::Unknown, response.code unless response.code == '200'
+          raise Error::InvalidRequest.new(response) if response.code == '400'
+          raise Error::NoPermission(response) if response.code == '403'
+          raise Error::Unknown(response), response.code unless response.code == '200'
 
           true
         end
@@ -30,9 +30,9 @@ module Swiftrail
         def all_tests
           response = conn.request(get_request(tests_for_run_path))
 
-          raise Error::InvalidRequest if response.code == '400'
-          raise Error::NoPermission if response.code == '403'
-          raise Error::Unknown, response.code unless response.code == '200'
+          raise Error::InvalidRequest.new(response) if response.code == '400'
+          raise Error::NoPermission(response) if response.code == '403'
+          raise Error::Unknown(response), response.code unless response.code == '200'
 
           JSON.parse(response.body).map do |item|
             TestRailTest.from_json(item)

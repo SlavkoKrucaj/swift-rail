@@ -5,20 +5,20 @@ module Swiftrail
     module Api
       module Error
         class InvalidRequest < Errors::Base
-          def initialize
-            super('Invalid or unknown test run/cases')
+          def initialize(error_response)
+            super("Invalid or unknown test run/cases #{error_response}")
           end
         end
 
         class NoPermission < Errors::Base
-          def initialize
-            super('No permissions to add test results or no access to the project')
+          def initialize(error_response)
+            super("No permissions to add test results or no access to the project #{error_response}")
           end
         end
 
         class Unknown < Errors::Base
-          def initialize(status_code)
-            super("There has been an unknown error.rb (status code: #{status_code} while doing api request")
+          def initialize(error_response)
+            super("There has been an unknown error #{error_response}")
           end
         end
       end
