@@ -2,6 +2,7 @@ require 'swiftrail/version'
 
 require 'swiftrail/junit/parser'
 require 'swiftrail/swift/parser'
+require 'swiftrail/swift/lint'
 require 'swiftrail/testrail/assembler'
 require 'swiftrail/testrail/reporter'
 require 'swiftrail/testrail/coverage'
