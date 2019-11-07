@@ -39,12 +39,16 @@ module Swiftrail
 
       def swift_test_for(junit_test_case)
         tests = swift_tests.select do |test|
+          test.bundle
           test.class_name == junit_test_case.class_name &&
             test.test_name == junit_test_case.test_name
         end
-        raise Error::Ambiguity.new(junit_test_case, tests) if tests.count > 1
-
-        tests.first
+        if tests.count > 1
+          STDERR.puts(Error::Ambiguity.new(junit_test_case, tests))
+          nil
+        else 
+          tests.first
+        end
       end
     end
   end
