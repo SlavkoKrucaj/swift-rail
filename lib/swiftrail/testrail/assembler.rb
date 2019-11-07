@@ -39,7 +39,6 @@ module Swiftrail
 
       def swift_test_for(junit_test_case)
         tests = swift_tests.select do |test|
-          test.bundle
           test.class_name == junit_test_case.class_name &&
             test.test_name == junit_test_case.test_name
         end
