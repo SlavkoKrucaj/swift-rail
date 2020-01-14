@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <testsuites name='Whatever.MyTests.xctest' tests='4' failures='0'>
   <testsuite name='Whatever.MyTests' tests='2' failures='1'>
-    <testcase classname='Whatever.MyTests' name='test_first' time='0.276'>
+    <testcase classname='Whatever.MyTests' name='MyFinalTests__C12345_C2345_C23455__when_getting_a_transaction__has_an_output_value' time='0.276'>
       <failure>There was some failure
 line: 26
 error: XCTAssertEqual failed: true is not equal to false - </failure>

@@ -1,6 +1,7 @@
 require 'swiftrail/testrail/errors'
 require 'swiftrail/testrail/api/test_case_result'
 require 'swiftrail/testrail/intermediate_result'
+require 'swiftrail/quicknimble/parser'
 
 module Swiftrail
   module Testrail
@@ -28,11 +29,23 @@ module Swiftrail
         test_suite.test_cases.map do |test_case|
           swift_test = swift_test_for(test_case)
           if swift_test.nil?
-            []
+            search_cases_ids(test_case)
           else
             swift_test.case_ids.map do |case_id|
               IntermediateResult.new(swift_test.file_name, swift_test.class_name, swift_test.test_name, test_case.success?, test_case.duration, test_case.failures, case_id)
             end
+          end
+        end
+      end
+
+      # lookup case ids in test_case name
+      def search_cases_ids(test_case)
+        result = extractInformation(test_case)
+        if result.case_ids.empty?
+          []
+        else
+          result.case_ids.map do |case_id|
+            IntermediateResult.new(result.test_name, result.test_name, result.test_name, test_case.success?, test_case.duration, test_case.failures, case_id)
           end
         end
       end

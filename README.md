@@ -62,6 +62,45 @@ class MyOtherTests: XCTestCase {
     }
 }
 ```
+
+#### QuickNimble support
+If Quick/Nimble is used for generating tests, the above examples can't be used. 
+
+In order for SwiftRail to detect which tests are linked to which cases ids, you need to add this custom context in your project:
+
+```swift
+public func testRail(_ ids: Int..., flags: FilterFlags = [:], closure: () -> Void) {
+    let formattedTestrailCases = ids
+        .map({ "C\($0)" })
+        .joined(separator: " ")
+    context(formattedTestrailCases, flags: flags, closure: closure)
+}
+```
+
+and then you can use it this way in your tests:
+
+```swift
+class MyControllerTests: QuickSpec {
+    override func spec() {
+        describe("MyControllerTests") {
+            testRail(12345, 22222, 33333) { // Add this new custom context
+                context("when creating it") {
+                    let sut = "short string"
+                    it("no output value") {
+                        expect(sut).to(equal("short string")
+                    }
+                }
+            }
+        }
+    }
+
+```
+
+It will generate test with the following name:
+`MyControllerTests__C12345_C22222_C33333__when_creating_it__no_output_value`
+
+And this test will be picked up by swiftrail and report it to testrail for the linked testrail cases!
+
 ### Report
 
 When running report you additionaly have to pass location of the test_reports, and if you want strict mode
