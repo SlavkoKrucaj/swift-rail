@@ -8,7 +8,7 @@ module Swiftrail
 
       # return RegexMatch result
       def extractInformation(test_case)
-        extracted_cases = test_case.scan(case_regex)[0]
+        extracted_cases = test_case.test_name.scan(case_regex)[0]
         if !extracted_cases.nil?
           case_ids = extracted_cases.split('_').reject { |c| c.empty? }
           RegexMatch.new(case_ids, test_case)
