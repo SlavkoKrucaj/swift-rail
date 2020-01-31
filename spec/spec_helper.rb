@@ -10,5 +10,6 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+    c.max_formatted_output_length = 1000 # n is number of lines, or nil for no truncation.
   end
 end
