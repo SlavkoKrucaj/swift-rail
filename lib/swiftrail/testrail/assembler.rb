@@ -40,7 +40,7 @@ module Swiftrail
 
       # lookup case ids in test_case name
       def search_cases_ids(test_case)
-        result = extractInformation(test_case)
+        result = QuickNimble::Parser.new().extractInformation(test_case.test_name)
         if result.case_ids.empty?
           []
         else
