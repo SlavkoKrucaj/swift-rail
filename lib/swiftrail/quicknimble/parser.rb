@@ -7,19 +7,18 @@ module Swiftrail
       RegexMatch = Struct.new(:case_ids, :test_name)
 
       # return RegexMatch result
-      def extractInformation(test_name)
-        extracted_cases = test_name.scan(case_regex)[0]
-        if !extracted_cases.nil?
-          case_ids = extracted_cases.split('_').reject { |c| c.empty? }
-          RegexMatch.new(case_ids, test_name)
-        else
-          RegexMatch.new([], test_name)
-        end
+      def extract_information(test_name)
+        RegexMatch.new(cases(test_name), test_name)
       end
 
       # find all occurences in string like this example: "C12345"
-      def case_regex
-        %r{_(?:_(?:C\d+)+)+__}i
+      def cases(test_name)
+        test_name
+          .split('__')
+          .map { |group| group.split('_') }
+          .select { |elements| elements.all? { |case_id| case_id =~ /C\d+/i } }
+          .flatten
+          .map { |case_id| case_id[1..-1] }
       end
     end
   end
